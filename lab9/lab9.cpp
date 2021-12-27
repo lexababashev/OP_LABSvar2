@@ -69,7 +69,6 @@ string* divideWords(string text, int& n, int& index)
             currWord = "";
             index++;
         }
-
     }
     return arrayOfWords;
 }
@@ -81,7 +80,6 @@ int Sum(string* words, int n)
     for (int i = 0; i < n; i++) {
         res += stoi(words[i]);
     }
-
     return res;
 }
 
