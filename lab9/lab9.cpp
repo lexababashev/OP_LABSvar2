@@ -77,7 +77,7 @@ string* divideWords(string text, int& n, int& index)
 int Sum(string* words, int n)
 {
 
-    int res = 0, valid_position = 0;
+    int res = 0;
     for (int i = 0; i < n; i++) {
         res += stoi(words[i]);
     }
