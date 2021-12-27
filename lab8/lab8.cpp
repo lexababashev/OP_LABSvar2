@@ -13,7 +13,7 @@ void clear(int**, int);
 
 
 int main() {
-    //srand(time(NULL));
+    srand(time(NULL));
     cout << "enter n = ";
     int n; cin >> n;
     int** A = initialize_matrix(n);
