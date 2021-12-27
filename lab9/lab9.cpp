@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <string>
 
@@ -14,16 +13,16 @@ int main()
     int index = 0;
 
     string Entered;
-    string* dividedWords;
-
     do
     {
         Entered = enterString();
     } while (WrongSymbol(Entered));
 
-    int n = count(Entered.begin(), Entered.end(), ' ') + 1;
 
+    string* dividedWords;
+    int n = count(Entered.begin(), Entered.end(), ' ') + 1;
     dividedWords = divideWords(Entered, n, index);
+
 
     int sum = Sum(dividedWords, n);
 
@@ -41,10 +40,22 @@ string enterString()
     return result;
 }
 
+bool WrongSymbol(string entered)
+{
+    bool res = false;
+    for (int i = 0; i < entered.length(); i++)
+        if (entered[i] != ' ' && (entered[i] < '0' || entered[i] > '9'))
+        {
+            res = true;
+        }
+    if (res)
+        cout << "incorrect symbol. try againe" << endl;
+    return res;
+}
+
 string* divideWords(string text, int& n, int& index)
 {
     
-
     string* arrayOfWords = new string[n];
     string currWord = "";
 
@@ -74,15 +85,3 @@ int Sum(string* words, int n)
     return res;
 }
 
-bool WrongSymbol(string entered)
-{
-    bool res = false;
-    for (int i = 0; i < entered.length(); i++)
-        if (entered[i] != ' ' && (entered[i] < '0' || entered[i] > '9'))
-        {
-            res = true;
-        }
-    if (res)
-        cout << "incorrect symbol. try againe"<<endl;
-    return res;
-}
