@@ -43,13 +43,17 @@ string enterString()
 bool WrongSymbol(string entered)
 {
     bool res = false;
-    for (int i = 0; i < entered.length(); i++)
+    for (int i = 0; i < entered.length(); i++) {
         if (entered[i] != ' ' && (entered[i] < '0' || entered[i] > '9'))
         {
             res = true;
         }
-    if (res)
+    }
+
+    if (res) {
         cout << "incorrect symbol. try againe" << endl;
+    }
+        
     return res;
 }
 
